@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/HibernateConfiguration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!--
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/penjualan_db</property>
+		-->
+		<!--  Jika pake DB2
+		<property name="connection.driver_class">com.ibm.db2.jcc.DB2Driver</property>
+		<property name="connection.url">jdbc:db2://localhost:50000/ebolink</property>
+		-->
+                <!--
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+		<property name="connection.pool_size">8</property>
+		<property name="show_sql">true</property>
+                -->
+                
+            
+                
+                <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+                
+                <!--
+                <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+                -->
+                <property name="current_session_context_class">thread</property>
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<property name="hibernate.hbm2ddl.auto">update</property>		
+                
+                <!-- List of Mapping model XML kedua -->
+                <!--
+                <mapping resource="Barang.hbm.xml"/>
+                <mapping resource="GrupBarang.hbm.xml"/>
+                -->
+                
+                <!-- SCYLLA : List Of Mapping Anntotiation Entity Class -->
+                <mapping class="org.config.spring.hibernate.model.Sysvar" />
+                <mapping class="org.config.spring.hibernate.model.CvOutlet" />
+                <mapping class="org.config.spring.hibernate.model.Stock" />                
+                <mapping class="org.config.spring.hibernate.model.JHeader" />
+                <mapping class="org.config.spring.hibernate.model.JPcode" />      
+                <mapping class="org.config.spring.hibernate.model.JTprb" />
+                <mapping class="org.config.spring.hibernate.model.JTpru" />
+                <mapping class="org.config.spring.hibernate.model.Outlet" />
+                <mapping class="org.config.spring.hibernate.model.Produk" />
+                <mapping class="org.config.spring.hibernate.model.Salesman" />
+                <!-- SCYLLA : INPUT Tambahan -->                 
+               <mapping class="org.config.spring.hibernate.model.ScyBDItem" />
+               <mapping class="org.config.spring.hibernate.model.ScyPenyesuaianItem" />
+               <mapping class="org.config.spring.hibernate.model.ScyReturPabrikItem" />
+                
+                <!-- BAYGON : OUTPUT -->
+               <mapping class="org.config.spring.hibernate.model.TblSalesId" />
+               <mapping class="org.config.spring.hibernate.model.TblSoId" />
+               <mapping class="org.config.spring.hibernate.model.TblStockId" />
+               <mapping class="org.config.spring.hibernate.model.TblClientId" />
+                <!-- BAYGON : SETUP -->
+               <mapping class="org.config.spring.hibernate.model.MapTipeOutlet" />
+                             
+               <!-- Tabel-Tabel Outlet KEK -->
+               <mapping class="org.config.spring.hibernate.model.TabelKeyAccount" />               
+               <mapping class="org.config.spring.hibernate.model.TabelOutletChain" />
+  
+               <mapping class="org.config.spring.hibernate.model.TabelOutletClass" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletGroup" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletSubGroup" />
+               
+               <mapping class="org.config.spring.hibernate.model.TabelOutletLocation" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletSize" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletType" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletClass" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletGroup" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletSubGroup" />
+               <mapping class="org.config.spring.hibernate.model.TabelOutletArea" />
+               
+               <!-- KEK : Tabel-Tabel Produk KEK -->
+               <mapping class="org.config.spring.hibernate.model.TabelProdBrand" />
+               <mapping class="org.config.spring.hibernate.model.TabelProdCategory" />
+               <mapping class="org.config.spring.hibernate.model.TabelProdDivisi" />
+               <mapping class="org.config.spring.hibernate.model.TabelProdSize" />
+               <mapping class="org.config.spring.hibernate.model.TabelProdSubBrand" />
+               <mapping class="org.config.spring.hibernate.model.TabelProdSubCategory" />
+               <mapping class="org.config.spring.hibernate.model.TabelProdVariance" />
+
+               <!-- KEK : Master Product, Outlet, Salesman -->
+               <mapping class="org.config.spring.hibernate.model.TMasterProduct" />               
+               <mapping class="org.config.spring.hibernate.model.TMasterOutlet" />
+               <mapping class="org.config.spring.hibernate.model.TMasterSalesman" />               
+               <!-- KEK : OUTPUT-->
+               <mapping class="org.config.spring.hibernate.model.TAdjstk" />
+               <mapping class="org.config.spring.hibernate.model.TClassout" />
+               <mapping class="org.config.spring.hibernate.model.TDatdpr" />
+               <mapping class="org.config.spring.hibernate.model.TDatdsl" />
+               <mapping class="org.config.spring.hibernate.model.TDatdsr" />
+               <mapping class="org.config.spring.hibernate.model.TDatsri" />
+               <mapping class="org.config.spring.hibernate.model.TStok" />
+               
+               <mapping class="org.config.spring.hibernate.model.TOutlet" />
+               <mapping class="org.config.spring.hibernate.model.TSalesman" />      
+               
+               <!-- POKARI -->     
+               <mapping class="org.config.spring.hibernate.model.pokari.ArCustomer" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.CanDDeliveryOrder" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDetail" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.CanDDeliveryOrderItemDisc" />      
+  
+               <mapping class="org.config.spring.hibernate.model.pokari.CustomerGroup" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.CustomerHirarchy" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.GroupSales" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.ProductBrand" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.SalesTerritory" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.TeamSales" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.TypeSales" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.WorkPlace" />      
+
+              <mapping class="org.config.spring.hibernate.model.pokari.SpEmployee" />      
+               
+               <mapping class="org.config.spring.hibernate.model.pokari.MappingProduct" />      
+ 
+<!--               
+               <mapping class="org.config.spring.hibernate.model.pokari.PokariProduct" />      
+-->               
+               <mapping class="org.config.spring.hibernate.model.pokari.SpEmployeeTarget" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.SpEmployeeTargetItemDetail" /> 
+               
+               <!-- POKARI : OUTPUT -->
+               
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputArCustomer" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrder" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDetail" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputCanDDeliveryOrderItemDisc" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputSpEmployee" />      
+
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputSpEmployeeTarget" />      
+               <mapping class="org.config.spring.hibernate.model.pokari.OutputSpEmployeeTargetItemDetail" /> 
+
+                              
+               <mapping class="org.config.spring.hibernate.model.pokari.TMasterProductPokari" />
+               
+ 	</session-factory>
+</hibernate-configuration>

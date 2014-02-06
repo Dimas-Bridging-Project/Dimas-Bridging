@@ -1,0 +1,739 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb6f089d0, pid=9808, tid=2020604736
+#
+# JRE version: 7.0_17-b02
+# Java VM: Java HotSpot(TM) Server VM (23.7-b01 mixed mode linux-x86 )
+# Problematic frame:
+# V  [libjvm.so+0x6259d0]  ParCompactionManager::follow_marking_stacks()+0xf0
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb6713400):  GCTaskThread [stack: 0x7867f000,0x78700000] [id=9814]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000000
+
+Registers:
+EAX=0x87200001, EBX=0x00000001, ECX=0x87200001, EDX=0x000000d1
+ESP=0x786ff090, EBP=0x786ff128, ESI=0x7d617e48, EDI=0xb67f9cc8
+EIP=0xb6f089d0, EFLAGS=0x00010206, CR2=0x00000000
+
+Top of Stack: (sp=0x786ff090)
+0x786ff090:   031e00d1 b67f9cd0 786ff0d8 031d00d1
+0x786ff0a0:   b67f9cd0 b67f9cc8 786ff0e8 b6dda8cb
+0x786ff0b0:   b67f9cc8 796aa0d8 00400000 00400000
+0x786ff0c0:   b67f9cd8 b67f9d08 a874c280 00000400
+0x786ff0d0:   00000400 a874d28c a874d28c 00000006
+0x786ff0e0:   7d617e48 7d617e40 786ff128 b6ccdafb
+0x786ff0f0:   b70fad90 7d617e48 00000006 12800101
+0x786ff100:   00000000 fffffff8 00010005 798d0b48 
+
+Instructions: (pc=0xb6f089d0)
+0xb6f089b0:   00 00 74 78 8d 5f 08 89 9d 78 ff ff ff 4a 81 e2
+0xb6f089c0:   ff 3f 00 00 89 57 04 83 3d 30 6b 0f b7 01 7e 05
+0xb6f089d0:   f0 83 04 24 00 8d 04 95 00 00 00 00 8b 5f 0c 01
+0xb6f089e0:   d8 89 d1 8b 30 66 8b 47 08 29 c1 89 c8 25 ff 3f 
+
+Register to memory mapping:
+
+EAX=0x87200001 is an unallocated location in the heap
+EBX=0x00000001 is an unknown value
+ECX=0x87200001 is an unallocated location in the heap
+EDX=0x000000d1 is an unknown value
+ESP=0x786ff090 is an unknown value
+EBP=0x786ff128 is an unknown value
+ESI=0x7d617e48 is an oop
+java.lang.String 
+ - klass: 'java/lang/String'
+EDI=0xb67f9cc8 is an unknown value
+
+
+Stack: [0x7867f000,0x78700000],  sp=0x786ff090,  free space=512k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x6259d0]  ParCompactionManager::follow_marking_stacks()+0xf0
+V  [libjvm.so+0x60fde0]  StealMarkingTask::do_it(GCTaskManager*, unsigned int)+0x260
+V  [libjvm.so+0x394a4e]  GCTaskThread::run()+0xfe
+V  [libjvm.so+0x5df1f1]  java_start(Thread*)+0x111
+C  [libpthread.so.0+0x6d4c]  start_thread+0xcc
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x73c9e000 JavaThread "resolver-4" daemon [_thread_blocked, id=9837, stack(0x7495e000,0x749af000)]
+  0x7486c800 JavaThread "resolver-3" daemon [_thread_blocked, id=9836, stack(0x749af000,0x74a00000)]
+  0x7485b800 JavaThread "resolver-2" daemon [_thread_blocked, id=9834, stack(0x74b50000,0x74ba1000)]
+  0x7486a400 JavaThread "resolver-1" daemon [_thread_blocked, id=9833, stack(0x74ba1000,0x74bf2000)]
+  0x74810c00 JavaThread "process reaper" daemon [_thread_blocked, id=9826, stack(0x75a03000,0x75a14000)]
+  0x759e8800 JavaThread "Service Thread" daemon [_thread_blocked, id=9822, stack(0x7842e000,0x7847f000)]
+  0x759e6c00 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=9821, stack(0x753fe000,0x7547f000)]
+  0x759e4c00 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=9820, stack(0x7547f000,0x75500000)]
+  0x759e3000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9819, stack(0x7862e000,0x7867f000)]
+  0x759a8800 JavaThread "Finalizer" daemon [_thread_blocked, id=9818, stack(0x7882e000,0x7887f000)]
+  0x759a6c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=9817, stack(0x78a16000,0x78a67000)]
+  0xb6706800 JavaThread "main" [_thread_blocked, id=9811, stack(0xb6866000,0xb68b7000)]
+
+Other Threads:
+  0x759a1000 VMThread [stack: 0x75a14000,0x75a95000] [id=9816]
+  0x759ea800 WatcherThread [stack: 0x7537d000,0x753fe000] [id=9823]
+
+=>0xb6713400 (exited) GCTaskThread [stack: 0x7867f000,0x78700000] [id=9814]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0xb6703ee8] Threads_lock - owner thread: 0x759a1000
+[0xb67042f8] Heap_lock - owner thread: 0xb6706800
+
+Heap
+ PSYoungGen      total 123072K, used 14334K [0xa1360000, 0xaa300000, 0xb3600000)
+  eden space 108736K, 0% used [0xa1360000,0xa1360000,0xa7d90000)
+  from space 14336K, 99% used [0xa7d90000,0xa8b8fa68,0xa8b90000)
+  to   space 17728K, 0% used [0xa91b0000,0xa91b0000,0xaa300000)
+ ParOldGen       total 37248K, used 18509K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 49% used [0x7ce00000,0x7e0137d8,0x7f260000)
+ PSPermGen       total 16384K, used 14945K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 91% used [0x78e00000,0x79c98458,0x79e00000)
+
+Card table byte_map: [0x78c2b000,0x78e00000] byte_map_base: 0x78864000
+
+Polling page: 0xb76fc000
+
+Code Cache  [0xb36cf000, 0xb398f000, 0xb66cf000)
+ total_blobs=946 nmethods=808 adapters=89 free_code_cache=46449Kb largest_free_block=47476096
+
+Compilation events (10 events):
+Event: 11.693 Thread 0x759e6c00  862             java.util.Collections$1::next (25 bytes)
+Event: 11.694 Thread 0x759e6c00 nmethod 862 0xb3874548 code [0xb3874640, 0xb38746b0]
+Event: 11.694 Thread 0x759e6c00  863             java.util.IdentityHashMap::put (123 bytes)
+Event: 11.704 Thread 0x759e6c00 nmethod 863 0xb376f8c8 code [0xb376f9e0, 0xb376fc84]
+Event: 11.704 Thread 0x759e6c00  864             java.lang.String::getBytes (27 bytes)
+Event: 11.706 Thread 0x759e6c00 nmethod 864 0xb3979648 code [0xb3979740, 0xb39797dc]
+Event: 11.725 Thread 0x759e6c00  865             java.util.concurrent.locks.AbstractQueuedSynchronizer::setState (6 bytes)
+Event: 11.725 Thread 0x759e6c00 nmethod 865 0xb3874388 code [0xb3874460, 0xb38744b0]
+Event: 11.754 Thread 0x759e6c00  866             java.util.Properties$LineReader::readLine (452 bytes)
+Event: 11.777 Thread 0x759e6c00 nmethod 866 0xb386d908 code [0xb386da40, 0xb386e17c]
+
+GC Heap History (10 events):
+Event: 2.196 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 30208K, used 2298K [0xa1360000, 0xa4e60000, 0xb3600000)
+  eden space 27904K, 0% used [0xa1360000,0xa1360000,0xa2ea0000)
+  from space 2304K, 99% used [0xa2ea0000,0xa30de820,0xa30e0000)
+  to   space 2304K, 0% used [0xa4c20000,0xa4c20000,0xa4e60000)
+ ParOldGen       total 37248K, used 4224K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 11% used [0x7ce00000,0x7d2203b0,0x7f260000)
+ PSPermGen       total 16384K, used 8048K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 49% used [0x78e00000,0x795dc398,0x79e00000)
+}
+Event: 3.458 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 30208K, used 30202K [0xa1360000, 0xa4e60000, 0xb3600000)
+  eden space 27904K, 100% used [0xa1360000,0xa2ea0000,0xa2ea0000)
+  from space 2304K, 99% used [0xa2ea0000,0xa30de820,0xa30e0000)
+  to   space 2304K, 0% used [0xa4c20000,0xa4c20000,0xa4e60000)
+ ParOldGen       total 37248K, used 4224K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 11% used [0x7ce00000,0x7d2203b0,0x7f260000)
+ PSPermGen       total 16384K, used 8485K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 51% used [0x78e00000,0x79649570,0x79e00000)
+Event: 3.481 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 58112K, used 2290K [0xa1360000, 0xa4e60000, 0xb3600000)
+  eden space 55808K, 0% used [0xa1360000,0xa1360000,0xa49e0000)
+  from space 2304K, 99% used [0xa4c20000,0xa4e5c830,0xa4e60000)
+  to   space 2304K, 0% used [0xa49e0000,0xa49e0000,0xa4c20000)
+ ParOldGen       total 37248K, used 6742K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 18% used [0x7ce00000,0x7d495858,0x7f260000)
+ PSPermGen       total 16384K, used 8485K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 51% used [0x78e00000,0x79649570,0x79e00000)
+}
+Event: 5.700 GC heap before
+{Heap before GC invocations=5 (full 0):
+ PSYoungGen      total 58112K, used 58098K [0xa1360000, 0xa4e60000, 0xb3600000)
+  eden space 55808K, 100% used [0xa1360000,0xa49e0000,0xa49e0000)
+  from space 2304K, 99% used [0xa4c20000,0xa4e5c830,0xa4e60000)
+  to   space 2304K, 0% used [0xa49e0000,0xa49e0000,0xa4c20000)
+ ParOldGen       total 37248K, used 6742K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 18% used [0x7ce00000,0x7d495858,0x7f260000)
+ PSPermGen       total 16384K, used 11103K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 67% used [0x78e00000,0x798d7cb0,0x79e00000)
+Event: 5.730 GC heap after
+Heap after GC invocations=5 (full 0):
+ PSYoungGen      total 58112K, used 2290K [0xa1360000, 0xa96c0000, 0xb3600000)
+  eden space 55808K, 0% used [0xa1360000,0xa1360000,0xa49e0000)
+  from space 2304K, 99% used [0xa49e0000,0xa4c1c830,0xa4c20000)
+  to   space 11456K, 0% used [0xa8b90000,0xa8b90000,0xa96c0000)
+ ParOldGen       total 37248K, used 16362K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 43% used [0x7ce00000,0x7ddfa858,0x7f260000)
+ PSPermGen       total 16384K, used 11103K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 67% used [0x78e00000,0x798d7cb0,0x79e00000)
+}
+Event: 9.333 GC heap before
+{Heap before GC invocations=6 (full 0):
+ PSYoungGen      total 58112K, used 58098K [0xa1360000, 0xa96c0000, 0xb3600000)
+  eden space 55808K, 100% used [0xa1360000,0xa49e0000,0xa49e0000)
+  from space 2304K, 99% used [0xa49e0000,0xa4c1c830,0xa4c20000)
+  to   space 11456K, 0% used [0xa8b90000,0xa8b90000,0xa96c0000)
+ ParOldGen       total 37248K, used 16362K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 43% used [0x7ce00000,0x7ddfa858,0x7f260000)
+ PSPermGen       total 16384K, used 13544K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 82% used [0x78e00000,0x79b3a160,0x79e00000)
+Event: 9.390 GC heap after
+Heap after GC invocations=6 (full 0):
+ PSYoungGen      total 120192K, used 11448K [0xa1360000, 0xa9c60000, 0xb3600000)
+  eden space 108736K, 0% used [0xa1360000,0xa1360000,0xa7d90000)
+  from space 11456K, 99% used [0xa8b90000,0xa96be160,0xa96c0000)
+  to   space 14336K, 0% used [0xa7d90000,0xa7d90000,0xa8b90000)
+ ParOldGen       total 37248K, used 17249K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 46% used [0x7ce00000,0x7ded85a0,0x7f260000)
+ PSPermGen       total 16384K, used 13544K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 82% used [0x78e00000,0x79b3a160,0x79e00000)
+}
+Event: 11.781 GC heap before
+{Heap before GC invocations=7 (full 0):
+ PSYoungGen      total 120192K, used 77771K [0xa1360000, 0xa9c60000, 0xb3600000)
+  eden space 108736K, 60% used [0xa1360000,0xa5424c38,0xa7d90000)
+  from space 11456K, 99% used [0xa8b90000,0xa96be160,0xa96c0000)
+  to   space 14336K, 0% used [0xa7d90000,0xa7d90000,0xa8b90000)
+ ParOldGen       total 37248K, used 17249K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 46% used [0x7ce00000,0x7ded85a0,0x7f260000)
+ PSPermGen       total 16384K, used 14945K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 91% used [0x78e00000,0x79c98458,0x79e00000)
+Event: 11.836 GC heap after
+Heap after GC invocations=7 (full 0):
+ PSYoungGen      total 123072K, used 14334K [0xa1360000, 0xaa300000, 0xb3600000)
+  eden space 108736K, 0% used [0xa1360000,0xa1360000,0xa7d90000)
+  from space 14336K, 99% used [0xa7d90000,0xa8b8fa68,0xa8b90000)
+  to   space 17728K, 0% used [0xa91b0000,0xa91b0000,0xaa300000)
+ ParOldGen       total 37248K, used 18509K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 49% used [0x7ce00000,0x7e0137d8,0x7f260000)
+ PSPermGen       total 16384K, used 14945K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 91% used [0x78e00000,0x79c98458,0x79e00000)
+}
+Event: 11.836 GC heap before
+{Heap before GC invocations=8 (full 1):
+ PSYoungGen      total 123072K, used 14334K [0xa1360000, 0xaa300000, 0xb3600000)
+  eden space 108736K, 0% used [0xa1360000,0xa1360000,0xa7d90000)
+  from space 14336K, 99% used [0xa7d90000,0xa8b8fa68,0xa8b90000)
+  to   space 17728K, 0% used [0xa91b0000,0xa91b0000,0xaa300000)
+ ParOldGen       total 37248K, used 18509K [0x7ce00000, 0x7f260000, 0xa1360000)
+  object space 37248K, 49% used [0x7ce00000,0x7e0137d8,0x7f260000)
+ PSPermGen       total 16384K, used 14945K [0x78e00000, 0x79e00000, 0x7ce00000)
+  object space 16384K, 91% used [0x78e00000,0x79c98458,0x79e00000)
+
+Deoptimization events (10 events):
+Event: 10.566 Thread 0xb6706800 Uncommon trap -34 fr.pc 0xb37a8130
+Event: 10.576 Thread 0xb6706800 Uncommon trap -34 fr.pc 0xb3769394
+Event: 10.576 Thread 0xb6706800 Uncommon trap -34 fr.pc 0xb37a613c
+Event: 10.662 Thread 0xb6706800 Uncommon trap -34 fr.pc 0xb37b7d68
+Event: 10.925 Thread 0x750cdc00 Uncommon trap -83 fr.pc 0xb394d700
+Event: 10.927 Thread 0x750d1c00 Uncommon trap -34 fr.pc 0xb37a8130
+Event: 10.927 Thread 0x750d1c00 Uncommon trap -34 fr.pc 0xb37a8130
+Event: 11.754 Thread 0xb6706800 Uncommon trap -34 fr.pc 0xb375514c
+Event: 11.780 Thread 0xb6706800 Uncommon trap -58 fr.pc 0xb3795be8
+Event: 11.780 Thread 0xb6706800 Uncommon trap -58 fr.pc 0xb3795be8
+
+Internal exceptions (10 events):
+Event: 11.769 Thread 0xb6706800 Threw 0xa5386d90 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.769 Thread 0xb6706800 Threw 0xa53873e0 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.772 Thread 0xb6706800 Threw 0xa538ca70 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.772 Thread 0xb6706800 Threw 0xa538d218 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.775 Thread 0xb6706800 Threw 0xa539d7b0 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.775 Thread 0xb6706800 Threw 0xa539deb8 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.776 Thread 0xb6706800 Threw 0xa53a2b58 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.776 Thread 0xb6706800 Threw 0xa53a3110 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.776 Thread 0xb6706800 Threw 0xa53a8418 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 11.776 Thread 0xb6706800 Threw 0xa53a8bc0 at /HUDSON/workspace/jdk7u17-2-build-linux-i586-product/jdk7u17/hotspot/src/share/vm/prims/jvm.cpp:1166
+
+Events (10 events):
+Event: 11.776 loading class 0x74aa55d8 done
+Event: 11.776 loading class 0x734442f8
+Event: 11.776 loading class 0x734442f8 done
+Event: 11.779 loading class 0xb6734b40
+Event: 11.779 loading class 0xb6734b40 done
+Event: 11.780 Thread 0xb6706800 DEOPT PACKING pc=0xb3795be8 sp=0xb68b51f0
+Event: 11.780 Thread 0xb6706800 DEOPT UNPACKING pc=0xb36fcefc sp=0xb68b51e4 mode 2
+Event: 11.780 Thread 0xb6706800 DEOPT PACKING pc=0xb3795be8 sp=0xb68b50e0
+Event: 11.780 Thread 0xb6706800 DEOPT UNPACKING pc=0xb36fcefc sp=0xb68b50d4 mode 2
+Event: 11.781 Executing VM operation: ParallelGCSystemGC
+
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 08:0a 43831      /usr/lib/jvm/java-7-oracle/bin/java
+08049000-0804a000 rw-p 00000000 08:0a 43831      /usr/lib/jvm/java-7-oracle/bin/java
+09104000-091c3000 rw-p 00000000 00:00 0          [heap]
+732c0000-73400000 rw-p 00000000 00:00 0 
+73400000-7345e000 rw-p 00000000 00:00 0 
+7345e000-73500000 ---p 00000000 00:00 0 
+73600000-736f4000 rw-p 00000000 00:00 0 
+736f4000-73700000 ---p 00000000 00:00 0 
+7376c000-73800000 rw-p 00000000 00:00 0 
+73800000-738fd000 rw-p 00000000 00:00 0 
+738fd000-73900000 ---p 00000000 00:00 0 
+73900000-739e0000 rw-p 00000000 00:00 0 
+739e0000-73a00000 ---p 00000000 00:00 0 
+73a00000-73af2000 rw-p 00000000 00:00 0 
+73af2000-73b00000 ---p 00000000 00:00 0 
+73b00000-73bfc000 rw-p 00000000 00:00 0 
+73bfc000-73c00000 ---p 00000000 00:00 0 
+73c00000-73cf2000 rw-p 00000000 00:00 0 
+73cf2000-73d00000 ---p 00000000 00:00 0 
+73d00000-73e00000 rw-p 00000000 00:00 0 
+73e00000-73ef6000 rw-p 00000000 00:00 0 
+73ef6000-73f00000 ---p 00000000 00:00 0 
+73f5e000-73f61000 ---p 00000000 00:00 0 
+73f61000-73faf000 rw-p 00000000 00:00 0 
+73faf000-73fb2000 ---p 00000000 00:00 0 
+73fb2000-74000000 rw-p 00000000 00:00 0 
+74000000-740d8000 rw-p 00000000 00:00 0 
+740d8000-74100000 ---p 00000000 00:00 0 
+74100000-741f9000 rw-p 00000000 00:00 0 
+741f9000-74200000 ---p 00000000 00:00 0 
+74200000-742ee000 rw-p 00000000 00:00 0 
+742ee000-74300000 ---p 00000000 00:00 0 
+74300000-743fc000 rw-p 00000000 00:00 0 
+743fc000-74400000 ---p 00000000 00:00 0 
+74400000-744cc000 rw-p 00000000 00:00 0 
+744cc000-74500000 ---p 00000000 00:00 0 
+74500000-745fb000 rw-p 00000000 00:00 0 
+745fb000-74600000 ---p 00000000 00:00 0 
+74600000-746fd000 rw-p 00000000 00:00 0 
+746fd000-74700000 ---p 00000000 00:00 0 
+74700000-747fe000 rw-p 00000000 00:00 0 
+747fe000-74800000 ---p 00000000 00:00 0 
+74800000-748fd000 rw-p 00000000 00:00 0 
+748fd000-74900000 ---p 00000000 00:00 0 
+7490d000-74910000 ---p 00000000 00:00 0 
+74910000-7495e000 rw-p 00000000 00:00 0 
+7495e000-74961000 ---p 00000000 00:00 0 
+74961000-749af000 rw-p 00000000 00:00 0 
+749af000-749b2000 ---p 00000000 00:00 0 
+749b2000-74a00000 rw-p 00000000 00:00 0 
+74a00000-74aff000 rw-p 00000000 00:00 0 
+74aff000-74b00000 ---p 00000000 00:00 0 
+74b49000-74b4b000 rw-p 00000000 00:00 0 
+74b4b000-74b4c000 r--s 00002000 08:0b 1318161    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar
+74b4c000-74b50000 r--s 00034000 08:0b 1462991    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+74b50000-74b53000 ---p 00000000 00:00 0 
+74b53000-74ba1000 rw-p 00000000 00:00 0 
+74ba1000-74ba4000 ---p 00000000 00:00 0 
+74ba4000-74bf2000 rw-p 00000000 00:00 0 
+74bf2000-74bf4000 r--s 0000d000 08:0b 1310833    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+74bf4000-74bf5000 r--s 00001000 08:0b 1087219    /home/yhawin/.m2/repository/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+74bf5000-74bf7000 r--s 00009000 08:0b 2237682    /home/yhawin/.m2/repository/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.jar
+74bf7000-74bfa000 r--s 0001b000 08:0b 1087218    /home/yhawin/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar
+74bfa000-74bfc000 r--s 00002000 08:0b 528166     /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+74bfc000-74bfe000 r--s 00006000 08:0b 527861     /home/yhawin/.m2/repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+74bfe000-74bff000 r--s 00001000 08:0b 528167     /home/yhawin/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+74bff000-74c00000 r--s 00002000 08:0b 3155411    /home/yhawin/.m2/repository/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+74c00000-74cff000 rw-p 00000000 00:00 0 
+74cff000-74d00000 ---p 00000000 00:00 0 
+74d00000-74df8000 rw-p 00000000 00:00 0 
+74df8000-74e00000 ---p 00000000 00:00 0 
+74e00000-74ee4000 rw-p 00000000 00:00 0 
+74ee4000-74f00000 ---p 00000000 00:00 0 
+74f00000-74ff9000 rw-p 00000000 00:00 0 
+74ff9000-75000000 ---p 00000000 00:00 0 
+75000000-75100000 rw-p 00000000 00:00 0 
+75100000-751fe000 rw-p 00000000 00:00 0 
+751fe000-75200000 ---p 00000000 00:00 0 
+75200000-75300000 rw-p 00000000 00:00 0 
+75300000-75301000 r--s 00005000 08:0b 1185216    /home/yhawin/.m2/repository/org/apache/maven/plugins/maven-install-plugin/2.3.1/maven-install-plugin-2.3.1.jar
+75301000-75305000 r--s 0002f000 08:0b 2894089    /home/yhawin/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+75305000-75308000 r--s 0000c000 08:0b 1311375    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.jar
+75308000-7530c000 r--s 00028000 08:0b 1311123    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.jar
+7530c000-7530d000 r--s 00004000 08:0b 1079867    /home/yhawin/.m2/repository/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.jar
+7530d000-7530e000 r--s 00002000 08:0b 3155427    /home/yhawin/.m2/repository/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+7530e000-75311000 r--s 00034000 08:0b 1463139    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.jar
+75311000-75313000 r--s 00006000 08:0b 2237649    /home/yhawin/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar
+75313000-7537d000 r--s 00e18000 08:0a 43581      /usr/lib/jvm/java-7-oracle/lib/tools.jar
+7537d000-7537e000 ---p 00000000 00:00 0 
+7537e000-753fe000 rw-p 00000000 00:00 0 
+753fe000-75401000 ---p 00000000 00:00 0 
+75401000-7547f000 rw-p 00000000 00:00 0 
+7547f000-75482000 ---p 00000000 00:00 0 
+75482000-75500000 rw-p 00000000 00:00 0 
+75500000-75700000 r--p 00000000 08:0a 34293      /usr/lib/locale/locale-archive
+75700000-757ff000 rw-p 00000000 00:00 0 
+757ff000-75800000 ---p 00000000 00:00 0 
+75800000-75821000 rw-p 00000000 00:00 0 
+75821000-75900000 ---p 00000000 00:00 0 
+75900000-75a00000 rw-p 00000000 00:00 0 
+75a00000-75a01000 r--s 00007000 08:0b 1081754    /home/yhawin/.m2/repository/org/apache/maven/plugins/maven-jar-plugin/2.3.2/maven-jar-plugin-2.3.2.jar
+75a01000-75a03000 r--s 0000d000 08:0b 1099136    /home/yhawin/.m2/repository/org/apache/maven/surefire/maven-surefire-common/2.10/maven-surefire-common-2.10.jar
+75a03000-75a06000 ---p 00000000 00:00 0 
+75a06000-75a14000 rw-p 00000000 00:00 0 
+75a14000-75a15000 ---p 00000000 00:00 0 
+75a15000-75ae0000 rw-p 00000000 00:00 0 
+75ae0000-75c9c000 r--s 039dc000 08:0a 43885      /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+75c9c000-78300000 rw-p 00000000 00:00 0 
+78300000-783fa000 rw-p 00000000 00:00 0 
+783fa000-78400000 ---p 00000000 00:00 0 
+78400000-78405000 r--s 00023000 08:0b 1099132    /home/yhawin/.m2/repository/org/apache/maven/surefire/surefire-api/2.10/surefire-api-2.10.jar
+78405000-78407000 r--s 00007000 08:0b 1099134    /home/yhawin/.m2/repository/org/apache/maven/surefire/surefire-booter/2.10/surefire-booter-2.10.jar
+78407000-78409000 r--s 00006000 08:0b 1087299    /home/yhawin/.m2/repository/org/apache/maven/plugins/maven-surefire-plugin/2.10/maven-surefire-plugin-2.10.jar
+78409000-7840b000 r--s 00002000 08:0b 1327985    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-compiler-javac/1.8.1/plexus-compiler-javac-1.8.1.jar
+7840b000-7840d000 r--s 00000000 08:0b 1327984    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-compiler-manager/1.8.1/plexus-compiler-manager-1.8.1.jar
+7840d000-7840e000 r--s 00004000 08:0b 1327983    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-compiler-api/1.8.1/plexus-compiler-api-1.8.1.jar
+7840e000-78410000 r--s 00006000 08:0b 1097594    /home/yhawin/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/2.3.2/maven-compiler-plugin-2.3.2.jar
+78410000-7842e000 r--s 0014f000 08:0b 1056420    /home/yhawin/usr/netbeans-7.3/java/maven/lib/sisu-guava-0.9.9.jar
+7842e000-78431000 ---p 00000000 00:00 0 
+78431000-7847f000 rw-p 00000000 00:00 0 
+7847f000-78480000 ---p 00000000 00:00 0 
+78480000-78500000 rw-p 00000000 00:00 0 
+78500000-78521000 rw-p 00000000 00:00 0 
+78521000-78600000 ---p 00000000 00:00 0 
+78600000-78602000 r--s 00005000 08:0b 1086708    /home/yhawin/.m2/repository/org/apache/maven/plugins/maven-resources-plugin/2.5/maven-resources-plugin-2.5.jar
+78602000-78606000 r--s 00033000 08:0b 1462974    /home/yhawin/.m2/repository/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+78606000-7860a000 r--s 0008a000 08:0a 43899      /usr/lib/jvm/java-7-oracle/jre/lib/jsse.jar
+7860a000-78611000 r--s 0003e000 08:0b 1056372    /home/yhawin/usr/netbeans-7.3/java/maven/lib/sisu-inject-bean-2.3.0.jar
+78611000-78619000 r--s 0004e000 08:0b 1056362    /home/yhawin/usr/netbeans-7.3/java/maven/lib/sisu-guice-3.1.0-no_aop.jar
+78619000-7862d000 r-xp 00000000 08:0a 78754      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libnet.so
+7862d000-7862e000 rw-p 00014000 08:0a 78754      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libnet.so
+7862e000-78631000 ---p 00000000 00:00 0 
+78631000-7867f000 rw-p 00000000 00:00 0 
+7867f000-78680000 ---p 00000000 00:00 0 
+78680000-78700000 rw-p 00000000 00:00 0 
+78700000-78721000 rw-p 00000000 00:00 0 
+78721000-78800000 ---p 00000000 00:00 0 
+78800000-78801000 r--s 00005000 08:0b 1066374    /home/yhawin/.m2/repository/org/apache/maven/plugins/maven-clean-plugin/2.4.1/maven-clean-plugin-2.4.1.jar
+78801000-78803000 r--s 0000d000 08:0b 1056326    /home/yhawin/usr/netbeans-7.3/java/maven/lib/plexus-interpolation-1.14.jar
+78803000-78805000 r--s 00002000 08:0b 1056408    /home/yhawin/usr/netbeans-7.3/java/maven/lib/plexus-cipher-1.7.jar
+78805000-78807000 r--s 0000b000 08:0b 1056385    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-artifact-3.0.4.jar
+78807000-78808000 r--s 00002000 08:0b 1056430    /home/yhawin/usr/netbeans-7.3/java/maven/lib/wagon-file-2.2.jar
+78808000-7880e000 r--s 0003e000 08:0b 1056401    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-compat-3.0.4.jar
+7880e000-78810000 r--s 0000a000 08:0b 1056373    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-plugin-api-3.0.4.jar
+78810000-7881e000 r-xp 00000000 08:0a 78812      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libnio.so
+7881e000-7881f000 rw-p 0000e000 08:0a 78812      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libnio.so
+7881f000-78823000 r--s 0001c000 08:0b 1056403    /home/yhawin/usr/netbeans-7.3/java/maven/lib/aether-util-1.13.1.jar
+78823000-78826000 r--s 00025000 08:0b 1056409    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-model-3.0.4.jar
+78826000-78828000 r--s 0000c000 08:0b 1056297    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-aether-provider-3.0.4.jar
+78828000-7882e000 r--s 0002b000 08:0b 1056345    /home/yhawin/usr/netbeans-7.3/java/maven/lib/sisu-inject-plexus-2.3.0.jar
+7882e000-78831000 ---p 00000000 00:00 0 
+78831000-7887f000 rw-p 00000000 00:00 0 
+7887f000-78880000 ---p 00000000 00:00 0 
+78880000-78900000 rw-p 00000000 00:00 0 
+78900000-78921000 rw-p 00000000 00:00 0 
+78921000-78a00000 ---p 00000000 00:00 0 
+78a00000-78a02000 r--s 00006000 08:0b 1056196    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-repository-metadata-3.0.4.jar
+78a02000-78a04000 r--s 00000000 08:0b 1056076    /home/yhawin/usr/netbeans-7.3/java/maven/lib/plexus-component-annotations-1.5.5.jar
+78a04000-78a16000 r--s 0009c000 08:0b 1056381    /home/yhawin/usr/netbeans-7.3/java/maven/lib/wagon-http-2.2-shaded.jar
+78a16000-78a19000 ---p 00000000 00:00 0 
+78a19000-78a67000 rw-p 00000000 00:00 0 
+78a67000-78a68000 ---p 00000000 00:00 0 
+78a68000-78af0000 rw-p 00000000 00:00 0 
+78af0000-78b08000 rw-p 00000000 00:00 0 
+78b08000-78b1b000 rw-p 00000000 00:00 0 
+78b1b000-78c2b000 rw-p 00000000 00:00 0 
+78c2b000-78c33000 rw-p 00000000 00:00 0 
+78c33000-78c4b000 rw-p 00000000 00:00 0 
+78c4b000-78c5e000 rw-p 00000000 00:00 0 
+78c5e000-78d6d000 rw-p 00000000 00:00 0 
+78d6d000-78db6000 rw-p 00000000 00:00 0 
+78db6000-78dff000 rw-p 00000000 00:00 0 
+78dff000-79e00000 rw-p 00000000 00:00 0 
+79e00000-7ce00000 rw-p 00000000 00:00 0 
+7ce00000-7f260000 rw-p 00000000 00:00 0 
+7f260000-a1360000 rw-p 00000000 00:00 0 
+a1360000-aa300000 rw-p 00000000 00:00 0 
+aa300000-b3600000 rw-p 00000000 00:00 0 
+b3600000-b3602000 r--s 00009000 08:0b 1056386    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-embedder-3.0.4.jar
+b3602000-b3603000 r--s 00009000 08:0b 1056427    /home/yhawin/usr/netbeans-7.3/java/maven/lib/commons-cli-1.2.jar
+b3603000-b3607000 r--s 00012000 08:0b 1056411    /home/yhawin/usr/netbeans-7.3/java/maven/lib/aether-api-1.13.1.jar
+b3607000-b360c000 r--s 00020000 08:0b 1056327    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-model-builder-3.0.4.jar
+b360c000-b360f000 r--s 00008000 08:0b 1056277    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-settings-builder-3.0.4.jar
+b360f000-b361a000 rw-p 00000000 00:00 0 
+b361a000-b36cf000 rw-p 00000000 00:00 0 
+b36cf000-b398f000 rwxp 00000000 00:00 0 
+b398f000-b66cf000 rw-p 00000000 00:00 0 
+b66cf000-b66e6000 r-xp 00000000 08:0a 78787      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libzip.so
+b66e6000-b66e7000 rw-p 00017000 08:0a 78787      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libzip.so
+b66e7000-b66f2000 r-xp 00000000 08:08 918483     /lib/i386-linux-gnu/libnss_files-2.15.so
+b66f2000-b66f3000 r--p 0000a000 08:08 918483     /lib/i386-linux-gnu/libnss_files-2.15.so
+b66f3000-b66f4000 rw-p 0000b000 08:08 918483     /lib/i386-linux-gnu/libnss_files-2.15.so
+b66f4000-b66fe000 r-xp 00000000 08:08 918487     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b66fe000-b66ff000 r--p 00009000 08:08 918487     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b66ff000-b6700000 rw-p 0000a000 08:08 918487     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6700000-b67fa000 rw-p 00000000 00:00 0 
+b67fa000-b6800000 ---p 00000000 00:00 0 
+b6800000-b6801000 r--p 00000000 00:00 0 
+b6801000-b6817000 r-xp 00000000 08:08 918477     /lib/i386-linux-gnu/libnsl-2.15.so
+b6817000-b6818000 r--p 00015000 08:08 918477     /lib/i386-linux-gnu/libnsl-2.15.so
+b6818000-b6819000 rw-p 00016000 08:08 918477     /lib/i386-linux-gnu/libnsl-2.15.so
+b6819000-b681b000 rw-p 00000000 00:00 0 
+b681b000-b681c000 r--s 00006000 08:0b 1056328    /home/yhawin/usr/netbeans-7.3/java/maven/lib/plexus-sec-dispatcher-1.3.jar
+b681c000-b681e000 r--s 0000a000 08:0b 1056384    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-settings-3.0.4.jar
+b681e000-b6821000 r--s 0001d000 08:0b 1056400    /home/yhawin/usr/netbeans-7.3/java/maven/lib/aether-impl-1.13.1.jar
+b6821000-b682d000 r--s 0007b000 08:0b 1056421    /home/yhawin/usr/netbeans-7.3/java/maven/lib/maven-core-3.0.4.jar
+b682d000-b682f000 r--s 0000b000 08:0b 1056371    /home/yhawin/usr/netbeans-7.3/java/maven/lib/wagon-provider-api-2.2.jar
+b682f000-b6831000 r--s 00006000 08:0b 1056255    /home/yhawin/usr/netbeans-7.3/java/maven/lib/aether-connector-wagon-1.13.1.jar
+b6831000-b6839000 rw-s 00000000 08:08 524675     /tmp/hsperfdata_yhawin/9808
+b6839000-b685c000 r-xp 00000000 08:0a 78765      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libjava.so
+b685c000-b685d000 rw-p 00023000 08:0a 78765      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libjava.so
+b685d000-b6864000 r-xp 00000000 08:08 918518     /lib/i386-linux-gnu/librt-2.15.so
+b6864000-b6865000 r--p 00006000 08:08 918518     /lib/i386-linux-gnu/librt-2.15.so
+b6865000-b6866000 rw-p 00007000 08:08 918518     /lib/i386-linux-gnu/librt-2.15.so
+b6866000-b6869000 ---p 00000000 00:00 0 
+b6869000-b68b7000 rw-p 00000000 00:00 0 
+b68b7000-b68e1000 r-xp 00000000 08:08 918464     /lib/i386-linux-gnu/libm-2.15.so
+b68e1000-b68e2000 r--p 00029000 08:08 918464     /lib/i386-linux-gnu/libm-2.15.so
+b68e2000-b68e3000 rw-p 0002a000 08:08 918464     /lib/i386-linux-gnu/libm-2.15.so
+b68e3000-b709c000 r-xp 00000000 08:0a 78803      /usr/lib/jvm/java-7-oracle/jre/lib/i386/server/libjvm.so
+b709c000-b70ee000 rw-p 007b9000 08:0a 78803      /usr/lib/jvm/java-7-oracle/jre/lib/i386/server/libjvm.so
+b70ee000-b7511000 rw-p 00000000 00:00 0 
+b7511000-b76b0000 r-xp 00000000 08:08 918432     /lib/i386-linux-gnu/libc-2.15.so
+b76b0000-b76b2000 r--p 0019f000 08:08 918432     /lib/i386-linux-gnu/libc-2.15.so
+b76b2000-b76b3000 rw-p 001a1000 08:08 918432     /lib/i386-linux-gnu/libc-2.15.so
+b76b3000-b76b6000 rw-p 00000000 00:00 0 
+b76b6000-b76b9000 r-xp 00000000 08:08 918445     /lib/i386-linux-gnu/libdl-2.15.so
+b76b9000-b76ba000 r--p 00002000 08:08 918445     /lib/i386-linux-gnu/libdl-2.15.so
+b76ba000-b76bb000 rw-p 00003000 08:08 918445     /lib/i386-linux-gnu/libdl-2.15.so
+b76bb000-b76ce000 r-xp 00000000 08:0a 78807      /usr/lib/jvm/java-7-oracle/jre/lib/i386/jli/libjli.so
+b76ce000-b76cf000 rw-p 00012000 08:0a 78807      /usr/lib/jvm/java-7-oracle/jre/lib/i386/jli/libjli.so
+b76cf000-b76d0000 rw-p 00000000 00:00 0 
+b76d0000-b76e7000 r-xp 00000000 08:08 918512     /lib/i386-linux-gnu/libpthread-2.15.so
+b76e7000-b76e8000 r--p 00016000 08:08 918512     /lib/i386-linux-gnu/libpthread-2.15.so
+b76e8000-b76e9000 rw-p 00017000 08:08 918512     /lib/i386-linux-gnu/libpthread-2.15.so
+b76e9000-b76eb000 rw-p 00000000 00:00 0 
+b76eb000-b76ec000 r--s 00003000 08:0b 1056410    /home/yhawin/usr/netbeans-7.3/java/maven/lib/aether-spi-1.13.1.jar
+b76ec000-b76ef000 r--s 00033000 08:0b 1056402    /home/yhawin/usr/netbeans-7.3/java/maven/lib/plexus-utils-2.0.6.jar
+b76ef000-b76f1000 r--s 0000a000 08:0b 1056361    /home/yhawin/usr/netbeans-7.3/java/maven/boot/plexus-classworlds-2.4.jar
+b76f1000-b76f2000 r--p 005e0000 08:0a 34293      /usr/lib/locale/locale-archive
+b76f2000-b76f9000 r-xp 00000000 08:08 918479     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b76f9000-b76fa000 r--p 00006000 08:08 918479     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b76fa000-b76fb000 rw-p 00007000 08:08 918479     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b76fb000-b76fc000 rw-p 00000000 00:00 0 
+b76fc000-b76fd000 ---p 00000000 00:00 0 
+b76fd000-b7708000 r-xp 00000000 08:0a 78755      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libverify.so
+b7708000-b7709000 rw-p 0000b000 08:0a 78755      /usr/lib/jvm/java-7-oracle/jre/lib/i386/libverify.so
+b7709000-b770b000 rw-p 00000000 00:00 0 
+b770b000-b770c000 r-xp 00000000 00:00 0          [vdso]
+b770c000-b772c000 r-xp 00000000 08:08 918412     /lib/i386-linux-gnu/ld-2.15.so
+b772c000-b772d000 r--p 0001f000 08:08 918412     /lib/i386-linux-gnu/ld-2.15.so
+b772d000-b772e000 rw-p 00020000 08:08 918412     /lib/i386-linux-gnu/ld-2.15.so
+bfe59000-bfe7a000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=/home/yhawin/usr/netbeans-7.3/java/maven/bin/m2.conf -Dmaven.home=/home/yhawin/usr/netbeans-7.3/java/maven 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher clean install
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-7-oracle
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/jvm/java-7-oracle/bin:/usr/lib/jvm/java-7-oracle/db/bin:/usr/lib/jvm/java-7-oracle/jre/bin
+LD_LIBRARY_PATH=/usr/lib/jvm/java-7-oracle/jre/lib/amd64:/usr/lib/jvm/java-7-oracle/jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x720f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x720f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5d9de0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5d9de0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5d9de0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5d9de0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5d96c0], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5dbcb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: [libjvm.so+0x5dbcb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5dbcb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:wheezy/sid
+
+uname:Linux 3.2.0-29-generic-pae #46-Ubuntu SMP Fri Jul 27 17:25:43 UTC 2012 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 27894, NOFILE 4096, AS infinity
+load average:0.62 0.49 0.54
+
+/proc/meminfo:
+MemTotal:        3571196 kB
+MemFree:         1108756 kB
+Buffers:          186216 kB
+Cached:           914428 kB
+SwapCached:            0 kB
+Active:          1590444 kB
+Inactive:         742992 kB
+Active(anon):    1234880 kB
+Inactive(anon):    10276 kB
+Active(file):     355564 kB
+Inactive(file):   732716 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+HighTotal:       2733300 kB
+HighFree:         550280 kB
+LowTotal:         837896 kB
+LowFree:          558476 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:              2268 kB
+Writeback:             0 kB
+AnonPages:       1233100 kB
+Mapped:           153164 kB
+Shmem:             12248 kB
+Slab:              68392 kB
+SReclaimable:      46216 kB
+SUnreclaim:        22176 kB
+KernelStack:        3920 kB
+PageTables:        11028 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3882744 kB
+Committed_AS:    3980728 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       20720 kB
+VmallocChunk:      99800 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:        8184 kB
+DirectMap2M:      905216 kB
+
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 18 model 1 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 18
+model		: 1
+model name	: AMD A6-3400M APU with Radeon(tm) HD Graphics
+stepping	: 0
+microcode	: 0x3000014
+cpu MHz		: 1400.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid aperfmperf pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt arat cpb npt lbrv svm_lock nrip_save pausefilter
+bogomips	: 2794.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate cpb
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 18
+model		: 1
+model name	: AMD A6-3400M APU with Radeon(tm) HD Graphics
+stepping	: 0
+microcode	: 0x3000014
+cpu MHz		: 1400.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid aperfmperf pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt arat cpb npt lbrv svm_lock nrip_save pausefilter
+bogomips	: 2794.84
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate cpb
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 18
+model		: 1
+model name	: AMD A6-3400M APU with Radeon(tm) HD Graphics
+stepping	: 0
+microcode	: 0x3000014
+cpu MHz		: 1400.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid aperfmperf pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt arat cpb npt lbrv svm_lock nrip_save pausefilter
+bogomips	: 2794.95
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate cpb
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 18
+model		: 1
+model name	: AMD A6-3400M APU with Radeon(tm) HD Graphics
+stepping	: 0
+microcode	: 0x3000014
+cpu MHz		: 1400.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid aperfmperf pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt arat cpb npt lbrv svm_lock nrip_save pausefilter
+bogomips	: 2794.84
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate cpb
+
+
+
+Memory: 4k page, physical 3571196k(1108756k free), swap 2097148k(2097148k free)
+
+vm_info: Java HotSpot(TM) Server VM (23.7-b01) for linux-x86 JRE (1.7.0_17-b02), built on Mar  1 2013 03:07:01 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Thu Dec 26 13:29:38 2013
+elapsed time: 11 seconds
+

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+   
+    <bean id="SysvarDaoBean" class="org.config.spring.hibernate.dao.SysvarDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>
+        
+    <bean id="CvOutletDaoBean" class="org.config.spring.hibernate.dao.CvOutletDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="StockDaoBean" class="org.config.spring.hibernate.dao.StockDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="JHeaderDaoBean" class="org.config.spring.hibernate.dao.JHeaderDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="JPcodeDaoBean" class="org.config.spring.hibernate.dao.JPcodeDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="JTprbDaoBean" class="org.config.spring.hibernate.dao.JTprbDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="JTpruDaoBean" class="org.config.spring.hibernate.dao.JTpruDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="MapTipeOutletDaoBean" class="org.config.spring.hibernate.dao.MapTipeOutletDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+   <!-- Tambahan Input untuk KEK -->
+    <bean id="ScyBDDaoBean" class="org.config.spring.hibernate.dao.ScyBDItemDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="ScyPenyesuaianDaoBean" class="org.config.spring.hibernate.dao.ScyPenyesuaianItemDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="ScyReturPabrikDaoBean" class="org.config.spring.hibernate.dao.ScyReturPabrikItemDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+
+   <!-- Output untuk Baygon -->
+    <bean id="OutletDaoBean" class="org.config.spring.hibernate.dao.OutletDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="ProdukDaoBean" class="org.config.spring.hibernate.dao.ProdukDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="SalesmanDaoBean" class="org.config.spring.hibernate.dao.SalesmanDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>        
+    <bean id="TblClientIdDaoBean" class="org.config.spring.hibernate.dao.TblClientIdDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TblSalesIdDaoBean" class="org.config.spring.hibernate.dao.TblSalesIdDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TblSoIdDaoBean" class="org.config.spring.hibernate.dao.TblSoIdDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TblStockIdDaoBean" class="org.config.spring.hibernate.dao.TblStockIdDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    
+    
+    <!-- Tabel-Tabel Outlet KEK -->
+    <bean id="TabelKeyAccountDaoBean" class="org.config.spring.hibernate.dao.TabelKeyAccountDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletChainDaoBean" class="org.config.spring.hibernate.dao.TabelOutletChainDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletLocationDaoBean" class="org.config.spring.hibernate.dao.TabelOutletLocationDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletSizeDaoBean" class="org.config.spring.hibernate.dao.TabelOutletSizeDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletTypeDaoBean" class="org.config.spring.hibernate.dao.TabelOutletTypeDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>        
+     <bean id="TabelOutletClassDaoBean" class="org.config.spring.hibernate.dao.TabelOutletClassDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletGroupDaoBean" class="org.config.spring.hibernate.dao.TabelOutletGroupDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletSubGroupDaoBean" class="org.config.spring.hibernate.dao.TabelOutletSubGroupDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelOutletAreaDaoBean" class="org.config.spring.hibernate.dao.TabelOutletAreaDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+   
+    <!-- Tabel-Tabel Product KEK -->
+    <bean id="TabelProdBrandDaoBean" class="org.config.spring.hibernate.dao.TabelProdBrandDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelProdCategoryDaoBean" class="org.config.spring.hibernate.dao.TabelProdCategoryDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelProdDivisiDaoBean" class="org.config.spring.hibernate.dao.TabelProdDivisiDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>
+    <bean id="TabelProdSizeDaoBean" class="org.config.spring.hibernate.dao.TabelProdSizeDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelProdSubBrandDaoBean" class="org.config.spring.hibernate.dao.TabelProdSubBrandDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelProdSubCategoryDaoBean" class="org.config.spring.hibernate.dao.TabelProdSubCategoryDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TabelProdVarianceDaoBean" class="org.config.spring.hibernate.dao.TabelProdVarianceDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    
+
+
+    <bean id="TMasterProductPokariDaoBean" class="org.config.spring.hibernate.dao.pokari.TMasterProductPokariDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+
+    <!-- Master Product, Outlet, Salesman -->
+    <bean id="TMasterProductDaoBean" class="org.config.spring.hibernate.dao.TMasterProductDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TMasterOutletDaoBean" class="org.config.spring.hibernate.dao.TMasterOutletDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="TMasterSalesmanDaoBean" class="org.config.spring.hibernate.dao.TMasterSalesmanDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+
+    <bean id="ScyBDItemDaoBean" class="org.config.spring.hibernate.dao.ScyBDItemDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="ScyPenyesuaianItemDaoBean" class="org.config.spring.hibernate.dao.ScyPenyesuaianItemDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    <bean id="ScyReturPabrikItemDaoBean" class="org.config.spring.hibernate.dao.ScyReturPabrikItemDaoImpl">
+         <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>    
+    
+    <!-- Bean Untuk Output KEK -->
+    <bean id="TAdjstkDaoBean" class="org.config.spring.hibernate.dao.TAdjstkDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>    
+    <bean id="TStokDaoBean" class="org.config.spring.hibernate.dao.TStokDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>    
+    <bean id="TDatdprDaoBean" class="org.config.spring.hibernate.dao.TDatdprDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="TDatdslDaoBean" class="org.config.spring.hibernate.dao.TDatdslDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="TDatdsrDaoBean" class="org.config.spring.hibernate.dao.TDatdsrDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="TDatsriDaoBean" class="org.config.spring.hibernate.dao.TDatsriDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="TSalesmanDaoBean" class="org.config.spring.hibernate.dao.TSalesmanDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="TOutletDaoBean" class="org.config.spring.hibernate.dao.TOutletDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+<!-- POKARI -->    
+    
+    <bean id="ArCustomerDao" class="org.config.spring.hibernate.dao.pokari.ArCustomerDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="CanDDeliveryOrderDao" class="org.config.spring.hibernate.dao.pokari.CanDDeliveryOrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="CanDDeliveryOrderItemDetailDao" class="org.config.spring.hibernate.dao.pokari.CanDDeliveryOrderItemDetailDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="CanDDeliveryOrderItemDiscDao" class="org.config.spring.hibernate.dao.pokari.CanDDeliveryOrderItemDiscDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="CustomerGroupDao" class="org.config.spring.hibernate.dao.pokari.CustomerGroupDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="CustomerHirarchyDao" class="org.config.spring.hibernate.dao.pokari.CustomerHirarchyDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="GroupSalesDao" class="org.config.spring.hibernate.dao.pokari.GroupSalesDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="MappingProductDao" class="org.config.spring.hibernate.dao.pokari.MappingProductDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="PokariProductDao" class="org.config.spring.hibernate.dao.pokari.PokariProductDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="ProductBrandDao" class="org.config.spring.hibernate.dao.pokari.ProductBrandDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="SalesTerritoryDao" class="org.config.spring.hibernate.dao.pokari.SalesTerritoryDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="SpEmployeeDao" class="org.config.spring.hibernate.dao.pokari.SpEmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="SpEmployeeTargetDao" class="org.config.spring.hibernate.dao.pokari.SpEmployeeTargetDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="SpEmployeeTargetItemDetailDao" class="org.config.spring.hibernate.dao.pokari.SpEmployeeTargetItemDetailDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="TeamSalesDao" class="org.config.spring.hibernate.dao.pokari.TeamSalesDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="TypeSalesDao" class="org.config.spring.hibernate.dao.pokari.TypeSalesDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="WorkplaceDao" class="org.config.spring.hibernate.dao.pokari.WorkplaceDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+  
+    <!-- POKARI : OUTPUT -->  
+    <bean id="OutputArCustomerDao" class="org.config.spring.hibernate.dao.pokari.OutputArCustomerDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="OutputCanDDeliveryOrderDao" class="org.config.spring.hibernate.dao.pokari.OutputCanDDeliveryOrderDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="OutputCanDDeliveryOrderItemDetailDao" class="org.config.spring.hibernate.dao.pokari.OutputCanDDeliveryOrderItemDetailDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="OutputCanDDeliveryOrderItemDiscDao" class="org.config.spring.hibernate.dao.pokari.OutputCanDDeliveryOrderItemDiscDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="OutputSpEmployeeDao" class="org.config.spring.hibernate.dao.pokari.OutputSpEmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="OutputSpEmployeeTargetDao" class="org.config.spring.hibernate.dao.pokari.OutputSpEmployeeTargetDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="OutputSpEmployeeTargetItemDetailDao" class="org.config.spring.hibernate.dao.pokari.OutputSpEmployeeTargetItemDetailDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+     
+</beans>
