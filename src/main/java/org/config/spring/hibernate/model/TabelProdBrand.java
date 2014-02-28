@@ -65,7 +65,7 @@ public class TabelProdBrand {
     
      @Override
     public String toString() {
-        return brandId + "  " + brandNm ;
+        return brandId + "-" + brandNm ;
     }
    
     

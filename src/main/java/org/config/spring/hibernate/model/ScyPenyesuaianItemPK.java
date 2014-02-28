@@ -63,5 +63,12 @@ public class ScyPenyesuaianItemPK implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return noDokumen + "-" + pcode;
+    }
+    
+    
     
 }

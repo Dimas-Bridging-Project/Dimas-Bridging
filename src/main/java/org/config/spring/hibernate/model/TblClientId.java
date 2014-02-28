@@ -111,6 +111,11 @@ public class TblClientId implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return ClientCode;
+    }
  
     
     

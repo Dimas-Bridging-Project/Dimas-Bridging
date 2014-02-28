@@ -18,6 +18,7 @@ import javax.persistence.*;
 @Table(name="tbl_sales_id")
 public class TblSalesId implements Serializable {
     @EmbeddedId 
+    @Column(name = "tblSalesIdPK")
     protected TblSalesIdPK tblSalesIdPK;
     
     @Column(name="record_type", length=12)
@@ -260,6 +261,33 @@ public class TblSalesId implements Serializable {
     public void setReserverdField3(String ReserverdField3) {
         this.ReserverdField3 = ReserverdField3;
     }
-  
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.tblSalesIdPK);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TblSalesId other = (TblSalesId) obj;
+        if (!Objects.equals(this.tblSalesIdPK, other.tblSalesIdPK)) {
+            return false;
+        }
+        return true;
+    }
+
+//    @Override
+//    public String toString() {
+//        return tblSalesIdPK.toString();
+//    }
+//  
     
 }

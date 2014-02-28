@@ -75,7 +75,7 @@ public class TabelProdDivisi implements Serializable {
     }
     @Override
     public String toString() {
-        return divisiId + "  " + divisiNm ;
+        return divisiId + "-" + divisiNm ;
     }
 
 }

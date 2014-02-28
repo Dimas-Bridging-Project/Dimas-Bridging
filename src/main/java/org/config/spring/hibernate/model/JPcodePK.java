@@ -21,6 +21,8 @@ public class JPcodePK implements Serializable {
     private String IdOrder;
     @Column(name="pcode", nullable=false)
     private String Pcode;
+    @Column(name="salesman")
+    private String Salesman;
 
     public String getIdOrder() {
         return IdOrder;
@@ -38,17 +40,20 @@ public class JPcodePK implements Serializable {
         this.Pcode = Pcode;
     }
 
-    @Override
-    public String toString() {
-        return IdOrder + "-" + Pcode;
+    public String getSalesman() {
+        return Salesman;
     }
 
-    
+    public void setSalesman(String Salesman) {
+        this.Salesman = Salesman;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.IdOrder);
-        hash = 71 * hash + Objects.hashCode(this.Pcode);
+        int hash = 3;
+        hash = 83 * hash + Objects.hashCode(this.IdOrder);
+        hash = 83 * hash + Objects.hashCode(this.Pcode);
+        hash = 83 * hash + Objects.hashCode(this.Salesman);
         return hash;
     }
 
@@ -67,9 +72,17 @@ public class JPcodePK implements Serializable {
         if (!Objects.equals(this.Pcode, other.Pcode)) {
             return false;
         }
+        if (!Objects.equals(this.Salesman, other.Salesman)) {
+            return false;
+        }
         return true;
     }
- 
+
+    @Override
+    public String toString() {
+        return IdOrder + "-" + Pcode + "-" + Salesman;
+    }
+
     
     
 }

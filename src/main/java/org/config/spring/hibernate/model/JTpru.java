@@ -18,10 +18,9 @@ import javax.persistence.*;
 @Table(name="jtpru")
 public class JTpru implements Serializable {
     @EmbeddedId
+    @Column(name = "jtpruPK")
     protected JTpruPK jtpruPK;
     
-    @Column(name="salesman")
-    private String Salesman;
     @Column(name="harga_no_ppn")
     private Integer HargaNoPpn;
     @Column(name="tipe")
@@ -59,14 +58,6 @@ public class JTpru implements Serializable {
 
     public void setJtpruPK(JTpruPK jtpruPK) {
         this.jtpruPK = jtpruPK;
-    }
-
-    public String getSalesman() {
-        return Salesman;
-    }
-
-    public void setSalesman(String Salesman) {
-        this.Salesman = Salesman;
     }
 
     public Integer getHargaNoPpn() {

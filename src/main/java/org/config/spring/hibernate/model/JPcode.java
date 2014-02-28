@@ -22,8 +22,6 @@ public class JPcode implements Serializable {
     @EmbeddedId
     @Column(name = "jpcode_pk")
     protected JPcodePK jpcodePK;    
-    @Column(name="salesman")
-    private String Salesman;
     @Column(name="qty_in_fib", length = 17)
     private String QtyInFib;
     @Column(name="qty_in_sat")
@@ -106,15 +104,6 @@ public class JPcode implements Serializable {
 
     public void setJpcodePK(JPcodePK jpcodePK) {
         this.jpcodePK = jpcodePK;
-    }
-
- 
-    public String getSalesman() {
-        return Salesman;
-    }
-
-    public void setSalesman(String Salesman) {
-        this.Salesman = Salesman;
     }
 
     public String getQtyInFib() {

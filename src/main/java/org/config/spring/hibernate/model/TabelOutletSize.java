@@ -65,7 +65,7 @@ public class TabelOutletSize implements Serializable {
     }
     @Override
     public String toString() {
-        return kodeSize + "  " + namaSize ;
+        return kodeSize + "-" + namaSize ;
     }
     
 }

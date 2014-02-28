@@ -66,7 +66,7 @@ public class TabelOutletSubGroup implements Serializable {
 
     @Override
     public String toString() {
-        return subGroupId + "  " + subGroupNm ;
+        return subGroupId + "-" + subGroupNm ;
     }
    
 }

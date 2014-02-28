@@ -265,7 +265,7 @@ public class TMasterSalesman implements Serializable {
     }
     @Override
     public String toString() {
-        return salesIdSap + "  " + salesNmSap;
+        return salesIdSap + "-" + salesNmSap;
     }
 
     

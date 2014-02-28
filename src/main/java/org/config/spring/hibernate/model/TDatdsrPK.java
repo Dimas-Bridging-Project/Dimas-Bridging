@@ -63,5 +63,10 @@ public class TDatdsrPK implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return transNo + "-" + itemCode;
+    }
     
 }

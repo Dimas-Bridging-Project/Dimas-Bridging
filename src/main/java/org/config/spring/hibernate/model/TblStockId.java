@@ -183,6 +183,11 @@ public class TblStockId implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return DistributorProductCode ;
+    }
     
     
     

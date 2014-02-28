@@ -65,7 +65,7 @@ public class TabelProdSubCategory {
     
     @Override
     public String toString() {
-        return subCategoryId + "  " + subCategoryNm ;
+        return subCategoryId + "-" + subCategoryNm ;
     }
     
     

@@ -19,10 +19,9 @@ import org.config.spring.hibernate.model.pokari.MappingProduct;
 @Table(name="jtprb")
 public class JTprb implements Serializable {
     @EmbeddedId
+    @Column(name = "jtprbPK")
     protected JTprbPK jtprbPK;
     
-    @Column(name="salesman")
-    private String Salesman;
     @Column(name="qty_in_fib", length = 17)
     private String QtyInFib;
     @Column(name="qty_in_sat")
@@ -99,15 +98,6 @@ public class JTprb implements Serializable {
     public void setJtprbPK(JTprbPK jtprbPK) {
         this.jtprbPK = jtprbPK;
     }
-
-    public String getSalesman() {
-        return Salesman;
-    }
-
-    public void setSalesman(String Salesman) {
-        this.Salesman = Salesman;
-    }
-
     public String getQtyInFib() {
         return QtyInFib;
     }

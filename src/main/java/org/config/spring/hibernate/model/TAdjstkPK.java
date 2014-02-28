@@ -66,7 +66,7 @@ public class TAdjstkPK implements Serializable {
 
     @Override
     public String toString() {
-        return "TAdjstkPK{" + "transNo=" + transNo + ", itemCode=" + itemCode + '}';
+        return transNo + "-" + itemCode ;
     }
 
     

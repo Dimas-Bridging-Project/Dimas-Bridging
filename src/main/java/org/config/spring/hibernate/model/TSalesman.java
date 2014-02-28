@@ -229,7 +229,7 @@ public class TSalesman implements Serializable {
 
     @Override
     public String toString() {
-        return salesIdSap + "  " + salesNmSap;
+        return salesIdSap + "-" + salesNmSap;
     }
 
     

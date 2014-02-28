@@ -65,7 +65,7 @@ public class TabelOutletLocation implements Serializable {
     }
     @Override
     public String toString() {
-        return kodeLokasi + "  " + namaLokasi ;
+        return kodeLokasi + "-" + namaLokasi ;
     }
     
 }

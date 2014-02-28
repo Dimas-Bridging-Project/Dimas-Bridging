@@ -67,7 +67,7 @@ public class TabelOutletClass implements Serializable {
     }
     @Override
     public String toString() {
-        return classId + "  " + classNm ;
+        return classId + "-" + classNm ;
     }
     
 }

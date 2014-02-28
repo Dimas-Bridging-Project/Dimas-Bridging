@@ -65,7 +65,7 @@ public class TabelProdCategory implements Serializable {
     }
     @Override
     public String toString() {
-        return categoryId + "  " + categoryNm ;
+        return categoryId + "-" + categoryNm ;
     }
     
 }

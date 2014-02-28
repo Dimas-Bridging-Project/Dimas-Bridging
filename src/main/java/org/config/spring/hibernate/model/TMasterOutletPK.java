@@ -42,7 +42,7 @@ public class TMasterOutletPK implements Serializable {
 
     @Override
     public String toString() {
-        return "TOutletPK{" + "mslsoutCode=" + mslsoutCode + ", scyOutCode=" + scyOutCode + '}';
+        return mslsoutCode + "-" + scyOutCode;
     }
 
     @Override

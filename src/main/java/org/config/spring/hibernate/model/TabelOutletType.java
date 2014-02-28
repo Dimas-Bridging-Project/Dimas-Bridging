@@ -65,7 +65,7 @@ public class TabelOutletType implements Serializable {
     }
     @Override
     public String toString() {
-        return kodeType + "  " + namaType ;
+        return kodeType + "-" + namaType ;
     }
     
 }

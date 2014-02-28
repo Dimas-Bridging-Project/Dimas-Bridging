@@ -66,7 +66,7 @@ public class TabelProdVariance implements Serializable {
  
     @Override
     public String toString() {
-        return varianceId + "  " + varianceNm ;
+        return varianceId + "-" + varianceNm ;
     }
     
     

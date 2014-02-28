@@ -44,7 +44,7 @@ public class TabelOutletArea implements Serializable {
 
     @Override
     public String toString() {
-        return areaId + "  " + areaNm ;
+        return areaId + "-" + areaNm ;
     }
     
     

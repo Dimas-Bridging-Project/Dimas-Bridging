@@ -388,7 +388,7 @@ public class TMasterProduct implements Serializable {
 
     @Override
     public String toString() {
-        return pcodeSap + "  " + pnameSap;
+        return pcodeSap + "-" + pnameSap;
     }
 
     

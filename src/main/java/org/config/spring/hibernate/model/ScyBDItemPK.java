@@ -40,7 +40,7 @@ public class ScyBDItemPK implements Serializable {
 
     @Override
     public String toString() {
-        return "ScyBDItemPK{" + "noDokumen=" + noDokumen + ", pcode=" + pcode + '}';
+        return noDokumen + "-" + pcode ;
     }
 
     @Override

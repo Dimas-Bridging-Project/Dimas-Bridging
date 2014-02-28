@@ -66,7 +66,7 @@ public class TabelProdSize implements Serializable {
     
     @Override
     public String toString() {
-        return sizeId + "  " + sizeNm ;
+        return sizeId + "-" + sizeNm ;
     }
     
     

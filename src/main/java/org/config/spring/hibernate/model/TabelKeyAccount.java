@@ -78,7 +78,7 @@ public class TabelKeyAccount implements Serializable {
 
     @Override
     public String toString() {
-        return kodeKa + "  " + namaKa ;
+        return kodeKa + "-" + namaKa ;
     }
 
     

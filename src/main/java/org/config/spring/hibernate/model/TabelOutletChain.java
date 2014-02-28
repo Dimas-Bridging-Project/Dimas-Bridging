@@ -66,7 +66,7 @@ public class TabelOutletChain implements Serializable {
 
     @Override
     public String toString() {
-        return kodeChain + "  " + namaChain ;
+        return kodeChain + "-" + namaChain ;
     }    
     
     

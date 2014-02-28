@@ -355,7 +355,7 @@ public class TOutlet implements Serializable {
 
     @Override
     public String toString() {
-        return mslsoutCode + "  " + mslsoutDesc;
+        return mslsoutCode + "-" + mslsoutDesc;
     }
     
     

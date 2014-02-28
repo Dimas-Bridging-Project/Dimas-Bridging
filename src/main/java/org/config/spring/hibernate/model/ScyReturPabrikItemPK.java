@@ -66,7 +66,7 @@ public class ScyReturPabrikItemPK implements Serializable {
 
     @Override
     public String toString() {
-        return "ScyReturPabrikItemPK{" + "noDokumen=" + noDokumen + ", pcode=" + pcode + '}';
+        return noDokumen + "-" + pcode;
     }
 
 

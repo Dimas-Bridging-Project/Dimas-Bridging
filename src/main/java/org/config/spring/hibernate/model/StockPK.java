@@ -69,6 +69,11 @@ public class StockPK implements Serializable {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return Pcode + "-" + TangalStock;
+    }
     
     
     
