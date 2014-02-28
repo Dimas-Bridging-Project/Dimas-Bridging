@@ -45,6 +45,30 @@ public class GroupSales implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + Objects.hashCode(this.typeGroup);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final GroupSales other = (GroupSales) obj;
+        if (!Objects.equals(this.typeGroup, other.typeGroup)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+    @Override
     public String toString() {
         return typeGroup + "  " + name ;
     }

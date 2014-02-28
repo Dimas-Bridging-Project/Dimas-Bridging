@@ -5,14 +5,10 @@
 package org.config.spring.hibernate.model;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.util.Date;
 import java.util.Objects;
-import java.util.Set;
 import javax.persistence.*;
 import org.config.spring.hibernate.model.pokari.SpEmployee;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 /**
  *

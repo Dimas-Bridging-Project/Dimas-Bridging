@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.config.spring.hibernate.model.JHeader;
 import org.config.spring.hibernate.model.Outlet;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -106,7 +107,8 @@ public class ArCustomer implements Serializable {
     public void setOutletSet(Set<Outlet> outletSet) {
         this.outletSet = outletSet;
     }
-
+    
+  
     /**
      * INPUT JHEADER
      */

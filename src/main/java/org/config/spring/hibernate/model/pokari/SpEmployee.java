@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.config.spring.hibernate.model.JHeader;
@@ -72,7 +74,18 @@ public class SpEmployee implements Serializable {
     //	Set<SpEmployeeTargetItemDetail> spEmployeeTargetItemDetailSet;
     //	Set<CanDDeliveryOrder> canDDeliveryOrderSet;
     //	TypeSales typeSales;
-        
+
+    
+
+    public Boolean isBonus() {
+        return bonus;
+    }
+
+    public void setBonus(Boolean bonus) {
+        this.bonus = bonus;
+    }
+
+    
     /**
      * INPUT FOR SALESMAN
      */    
@@ -216,8 +229,8 @@ public class SpEmployee implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.szEmployeeId);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.szEmployeeId);
         return hash;
     }
 
@@ -238,8 +251,9 @@ public class SpEmployee implements Serializable {
 
     @Override
     public String toString() {
-        return szEmployeeId + "  " + szName;
+        return szEmployeeId + "-" + szName;
     }
+
 
  
         
